@@ -1,0 +1,40 @@
+
+/*
+		<article class="profile">
+			<h1 class="profile-name">{{ user.name }}</h1>
+			<img class="profile-avatar" src="/static/images/defaultpic.png">
+			<section class="profile-biography">
+				<h2>Biography</h2>
+				<p>{{ biography }}</p>
+			</section>
+			<section class="profile-activity">
+				<h2>Recent Activity</h2>
+				<ul id ="recent">
+					
+				</ul>
+			</section>
+		</article>
+*/
+
+.profile {
+}
+
+	.profile-name {
+		
+	}
+	
+	.profile-avatar {
+		height: 250px;
+		width:210px;
+		margin-top: 6px;
+		float: left;
+	}
+	
+	.profile-biography {
+		float: left;
+		margin-left: 48px;
+	}
+	
+	.profile-activity {
+		margin-top: 48px;
+	}

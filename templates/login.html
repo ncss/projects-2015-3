@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include templates/stylesheets.html %}
+        <link rel="stylesheet" type="text/css" href="/static/css/login.css">
+        <title>Login</title>
+    </head>
+    <body>
+    {% include templates/header.html %}
+    <div class="page-width">
+        <section class="formarea">
+            <form action="/login" method="POST">
+                <p>
+                    {{ message }}
+                </p>
+                <fieldset>
+                    <legend>
+                    Login
+                    </legend>
+                    <p>
+                        <label for="email">Email</label>
+                        <input id="email" type="text" name="email" placeholder="me@example.com" required>
+                    </p>
+                    <p>
+                        <label for="password">Password:</label>
+                        <input id="password" type="password" name="password" required>
+                    </p>
+                    <p class="submit"><input class="primary_button" name="submit" type="submit" value="Login"></p>
+                    
+                </fieldset>
+            </form>
+            <div class="formlink"><a href="/register">Dont have an account yet? Register</a></div>
+        </section>
+    </div>
+    {% include templates/footer.html %}
+    </body>
+</html>

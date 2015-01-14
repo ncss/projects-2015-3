@@ -1,0 +1,7 @@
+fieldset a {
+	float: right;
+	padding: 12px;
+}
+fieldset input {
+	font-weight: bold;
+}

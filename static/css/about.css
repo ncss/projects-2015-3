@@ -1,0 +1,6 @@
+.background-box {
+	box-sizing: border-box;
+	background: white;
+	position: relative;
+	padding: 12px;
+}

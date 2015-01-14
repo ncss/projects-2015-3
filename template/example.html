@@ -1,0 +1,19 @@
+<html>
+  {% include example_header.html %}
+  <p>
+    {% for person in jim.friends %}
+      {% if person.gender == 0 %}Hello Female,{{ person.name }}
+      {% elif person.gender == 1 %}Hello Male,{{ person.name }}
+      {% else %}Hello,{{ person.name }}
+      {% end %}
+      <br>
+      {% end %}
+      {{ unsafe }}
+      {% safe safe %}
+	function(){
+	  function() { 
+      {{ jim.name }}
+      lksdjslkd
+    }}
+  </p>
+</html>

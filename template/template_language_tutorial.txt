@@ -1,0 +1,47 @@
+Tutorial
+
+from template import render
+
+def render(path, scope)
+path = html page
+scope = dictionary of all variables/objects used
+
+E.g
+context.write(render("main.html", {"person": jim}))
+
+Core tags already implemented:
+
+• {{ expr }}
+
+This tag is used to output the result of any valid Python expression into the html document in place of the tag.
+The output should be properly escaped so that invalid html is not produced.
+E.g. <h1>{{ person.name }}'s Profile</h1>
+NO DOTS IN VARIALBE NAMES UNLESS IT IS AN OBJECT THAT CONTAINS THE PROPERTY BEING USED
+E.g <h1>{{ person.name }}'s Profile</h1> {"person": person()} Correct 
+E.g <h1>{{ person.name }}'s Profile</h1> {"person.name": "Bob"} Incorrect
+
+• {% include path %}
+
+This tag is used to include another template ﬁle in place of the tag. The path argument should be the path to
+the template html ﬁle.
+E.g. {% include header.html %}
+
+
+• {% if predicate %}X{% end if %}
+
+This tag is used to conditionally output values. The template code X will only be executed if predicate evaluates
+to True.
+E.g. {% if person.friends %}{{ person.name }} has {{ len(person.friends) }} friends!{% end if %}
+
+
+• {% if predicate %}X{% else %}Y{% end if %}
+
+This tag is used to output a different value if the predicate returns false. Be careful as there is no "elif" functionality implemented so in the case where multiple decisions can be made about one predicate they will have to be made as explicit if statements.
+E.g. {% if person.friends %}{{ person.name }} has {{ len(person.friends) }} friends!{% else %}{{ person.name }} has no friends!{% end if %}
+
+
+• {% for dest in src %}X{% end for %}
+
+This tag is used to repeatedly execute the template code X for every element in the variable src. Every time X
+is executed, the current value of the variable dest is added to the context of X.
+E.g. {% for friend in person.friends %}<li class='friend'>{% include friend.html %}</li>{% end for %

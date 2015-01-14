@@ -1,0 +1,32 @@
+<header>
+	<script>
+	var base_url = "{{ base_url }}";
+	</script>
+	<div class="page-width">
+		<a href= "/"><img id="logo" src="/static/images/logo.png"></a>
+		{% if response and getattr(response, "user", False) %}
+		<form class="header-search-container" method="GET" action="/search_video" id="search-form">
+			<input class= "header-search-input" type="text" placeholder="Search" name="q" id="search-query" value="{{ q }}">
+		</form>
+		{% end %}
+		<nav>
+			<ul>
+				<li>
+					<a href="/about">About</a>
+					<!--<a href="" class="drop-down-item">Categories</a>
+					<a href="" class="drop-down-item">Trending</a>-->
+				</li>
+				<li>
+					{% if response and getattr(response, "user", False) %}
+						<a href="/profile">{{ response.user.name }}</a>
+						<ul>
+							<li><a href="/logout">Logout</a></li>
+						</ul>
+					{% else %}
+						<a href="/login">Login</a>
+					{% end %}
+				</li>
+			</ul>
+		</nav>
+	</div>
+</header>

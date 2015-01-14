@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% include templates/stylesheets.html %}
+        <title>Register</title>
+    </head>
+    <body>
+    {% include templates/header.html %}
+        <section class="formarea">
+            <form action="/register" method="POST">
+                <fieldset>
+                    <p>
+                    <legend>
+                        Register    
+                    </legend>
+                    </p>
+
+                    {% if valid == False %}
+                    <p class="error">{% safe message %}</p>
+                    {% end %}
+
+                    <p>
+                        <label for="email">*Email:</label>
+                        <input id="email" type="email" name="email" value="{{ email }}" placeholder="me@example.com" required autofocus>
+                    </p>
+                    <p>
+                        <label for="password">*Password:</label>
+                        <input id="password" name="password" type="password" placeholder="(8-32 characters)" pattern=".{8,32}" title="8 - 32 characters" required>
+                    </p>
+                    <p>
+                        <label for="display_name">*Display Name:</label>
+                        <input id="display_name" name="display_name" type="text" pattern=".{3,16}" maxlength="16" title="3 - 16 characters." placeholder="(4-16 characters)" value="{{ display_name }}" required>
+                    </p>
+                    <p>
+                        <label for="birthday">Birthday:</label>
+                        <input id="birthday" type="date" name="birthday" placeholder="YYYY-MM-DD" min="1925-01-01" value="{{ birthday }}" >
+                    </p>
+                    <p>
+                        <label for="gender">Gender:</label>
+                        <select id="gender" name="gender">
+                            <option value="None">Unspecified</option>
+                            <option value="O">Other</option>
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </p>
+
+                    <p class="submit">
+                        <input class="primary_button" type="submit" value="Register">
+                    </p>
+                    <span class='note'>* Required field.</span>
+
+                </fieldset>
+            </form>
+            <div class="formlink"><a href="/login">Already have an account? Login</a></div>
+        </section>
+    {% include templates/footer.html %}
+    </body>
+</html>

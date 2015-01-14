@@ -1,0 +1,218 @@
+/*
+ _______  _______  _______  _______  _______  _        _______  _       _________ _______ 
+(  ____ \(  ___  )(       )(  ____ )(  ___  )( (    /|(  ____ \( (    /|\__   __/(  ____ \
+| (    \/| (   ) || () () || (    )|| (   ) ||  \  ( || (    \/|  \  ( |   ) (   | (    \/
+| |      | |   | || || || || (____)|| |   | ||   \ | || (__    |   \ | |   | |   | (_____ 
+| |      | |   | || |(_)| ||  _____)| |   | || (\ \) ||  __)   | (\ \) |   | |   (_____  )
+| |      | |   | || |   | || (      | |   | || | \   || (      | | \   |   | |         ) |
+| (____/\| (___) || )   ( || )      | (___) || )  \  || (____/\| )  \  |   | |   /\____) |
+(_______/(_______)|/     \||/       (_______)|/    )_)(_______/|/    )_)   )_(   \_______)
+
+
+These are the shared components for Cinemeow.
+*/
+
+
+
+
+
+/*
+		Video List
+		This is a component for previewing a list of videos.
+		It is a horizontal scrolling collection of videos with a title.
+		Video list item dimensions = 240 x 240
+		Video list height = 336
+		
+		Sample HTML
+		<section class="video-list">
+			<h2 class="video-list-heading">Popular</h2>
+			<menu class="video-list-controls">
+				<button class="video-list-control video-list-control-left">
+					previous
+				</button>
+				<button class="video-list-control video-list-control-right">
+					next
+				</button>
+			</menu>
+			<ol class="video-list-items">
+				<li class="video-list-item video-thumbnail">
+					<h3 class="video-thumbnail-caption">video 1</h3>
+					<video class="video-thumbnail-preview">
+					</video>
+				</li>
+				<li class="video-list-item video-thumbnail">
+					<h3 class="video-thumbnail-caption">video 2</h3>
+					<video class="video-thumbnail-preview">
+					</video>
+				</li>
+				<li class="video-list-item video-thumbnail">
+					<h3 class="video-thumbnail-caption">video 3</h3>
+					<video class="video-thumbnail-preview">
+					</video>
+				</li>
+			</ol>
+		</section>
+*/
+
+.video-list  {
+	box-sizing: border-box;
+	display: block;
+	background-color: white;
+	margin-bottom: 24px;
+	padding: 12px;
+	border: 1px solid #e0e0e0;
+	border-radius: 2px;
+}
+
+	.video-list-heading {
+		line-height: 24px;
+		font-size: 18px;
+		margin-bottom: 16px;
+		font-weight: 300;
+		color: #444;
+	}
+	
+	.video-list-scroll-container {
+		display: block;
+		width: 100%;
+	}
+			
+	.video-list-items {
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
+	
+		.video-list-item {
+			display: inline-block;
+			height: 180px;
+			width: 240px;
+			background-color: white;
+			margin: 0 0 0 0px;
+			position: relative;
+		}
+		
+		.video-list-item.large {
+			height: 362px;
+			width: 484px;
+		}
+		
+		.video-list-item .overlay {
+			position: absolute;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			opacity: 0.6;
+			z-index: 5;
+		}
+		
+			.video-list-item:hover .overlay {
+				display: none;
+			}
+			
+			.video-list-item:hover .video-thumbnail-caption {
+				display: none;
+			}
+		
+		.video-thumbnail-caption {
+			position: absolute;
+			top: 50%;
+			left: 0px;
+			right: 0px;
+			text-align: center;
+			color: white;
+			font-size: 16px;
+			margin-top: -8px;
+			text-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+			z-index: 10;
+		}
+        
+        .center {
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .search-result {
+            width: 150 px;
+        }
+        
+        .search-result img {
+            width: 100%;
+        }
+        
+  .search-result-white  {
+	box-sizing: border-box;
+	display: block;
+	position: relative;
+	background-color: white;
+	height: 250px;
+	padding: 24px 0;
+}      
+        .search-result-background {
+            box-sizing: border-box;
+            display: block;
+            position: relative;
+            margin-bottom: 24px;
+            padding: 36px 0 24px 0;
+            width: 830px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        
+            .search-result-item {
+                display: inline-block;
+                height: auto;
+                width: 240px;
+                background-color: white;
+                margin: 0 12px 0 12px;
+                margin-top: 0;
+            }
+
+
+/* 
+		This puts the search bar in the header.
+*/
+
+ 		
+.header-search-container {
+	padding: 0 0 0 30px;
+	background: none;
+	margin: 0;
+	float: left;
+}	
+
+	.header-search-input, form input[type=text].header-search-input  {
+		padding: 8px 12px;
+		border: none;
+		border-radius: 20px;
+		box-shadow: none;
+		font-size: 16px;
+		color: #022E64;
+		position: relative;
+		top: 2px;
+		max-width: 360px;
+	}
+	
+	.header-search-input:focus {
+		outline: none;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

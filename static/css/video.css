@@ -1,0 +1,109 @@
+.video-width{
+	width: 700px;
+	margin: auto;
+}
+
+fieldset input {
+	font-weight: bold;
+}
+
+section fieldset{
+
+}
+
+#player_section {
+	text-align: center;
+	text-decoration: none;
+	background-color: black;
+	margin-bottom: 40px;
+}
+
+#player_section h1 {
+	color: rgba(255,255,255,0.5);
+	font-size: 14px;
+	margin: 10px 0px 0px 0px;
+	padding-bottom: 10px;
+}
+
+/*#player {
+	width: 700px;
+}
+This does nothing, just adds black lines to the side of the video
+*/
+
+.video-comments{
+	margin-top: 24px;
+}
+
+.video-comment, form.video-comment{
+	margin: 0;
+	margin-bottom: 24px;
+	background: transparent;
+} 
+
+	.video-comment-text, .video-comment-text-input{
+		box-sizing: border-box;
+		background: white;	
+		position: relative;
+		padding: 12px;
+	}
+		.video-comment-text::after , .video-comment-text-input::after{
+			content: '';
+			display: block;
+			position: absolute;
+			border: 12px solid white;
+			border-color: transparent transparent transparent white;
+			width: 0px;
+			height: 0px;
+			bottom: -12px;
+			left: 12px;
+		}
+	
+		.video-comment-text-input{
+			padding: 0
+		}
+		
+		.video-comment-textarea, textarea.video-comment-textarea{
+			padding: 12px;
+			width: 100%;
+			height: 100%;
+			box-sizing: border-box;
+		}
+		
+		.video-comment-textarea:focus, textarea.video-comment-textarea:focus{
+			outline: none;
+		}
+	
+	.video-comment-author{
+		font-size: 14px;
+		float: left;
+		color: #213141;
+	}
+	
+	.video-comment-time{
+		float: left;
+		margin-left: 12px;
+		font-style: italic;
+		color: #aaa;
+	}
+
+	.video-comment-submit{
+		float: right;
+	}
+	
+	
+.comment-form form{ 
+	width:inherit;
+	padding: 24px 0;
+}
+
+.comment-form fieldset{
+	width:inherit;
+}
+
+
+.comment-form input[type=submit] {
+	font-weight: bold;
+	margin-left: 0;
+}
+

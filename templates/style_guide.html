@@ -1,0 +1,153 @@
+<!-- header
+heading 1
+heading 2
+heading 3
+paragraph
+form
+2 inputs with labels
+text field w/ label
+submit button 
+radio
+file input
+second paragraph
+drop down menus for date-->
+
+<!doctype html>
+<html>
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700|Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/core.css">
+		<title>Home</title>
+	</head>
+	<body>
+		<header>
+			<div class="page-width">
+				<h1>CineMeow</h1>
+				<nav>
+					<a href="#">Link 1</a>
+					<a href="#">Link 2</a>
+					<a href="#">Link 3</a>
+				</nav>
+			</div>
+		</header>
+		<div id="main" class="page-width">
+			<h1>Heading1</h1>
+			<h2>Heading2</h2>
+			<h3>Heading3</h3>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, odio quis egestas dignissim, augue tortor malesuada nisl, 
+				aliquet mollis dui augue eget odio. Aenean maximus varius enim, nec efficitur mi sollicitudin et. Vivamus facilisis semper urna 
+				sit amet facilisis. Praesent nec faucibus turpis. Ut sed dui vitae enim interdum placerat et non velit. Aenean erat lectus, 
+				scelerisque in finibus id, tempus et leo. Nullam vel laoreet erat, id tincidunt tortor. Cum sociis natoque penatibus et magnis 
+				dis parturient montes, nascetur ridiculus mus.
+			</p>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. In cursus, odio quis egestas dignissim, augue tortor malesuada nisl, 
+				aliquet mollis dui augue eget odio. Aenean maximus varius enim, nec efficitur mi sollicitudin et. Vivamus facilisis semper urna 
+				sit amet facilisis. Praesent nec faucibus turpis. Ut sed dui vitae enim interdum placerat et non velit. Aenean erat lectus, 
+				scelerisque in finibus id, tempus et leo. Nullam vel laoreet erat, id tincidunt tortor. Cum sociis natoque penatibus et magnis 
+				dis parturient montes, nascetur ridiculus mus.
+			</p>
+			<form action="/send_to" class="cf">
+				<fieldset>
+					<legend>
+						Your Details
+					</legend>
+					<p>
+						<label>Name:</label>
+						<input type="text" name = "Username">
+					</p>
+					<p>
+						<label>Password:</label>
+						<input type="password" name = "Password">
+					</p>
+					<p>
+						<label>Gender:</label>
+						<label>
+							<input type="radio" name="gender" value="Female">
+							Female
+						</label>
+						<label>
+							<input type="radio" name="gender" value="Male">
+							Male
+						</label>
+					</p>
+					<p>
+						<label>Bio:</label>
+						<textarea placeholder="Write bio here"></textarea>
+					</p>
+					<p>
+						<label>Picture:</label>
+						<input type="file" name = "Picture">
+					</p>
+					<p>
+						<label>Date of Birth:</label>
+						<select name="day">
+							<option value="1">1
+							<option value="2">2
+							<option value="3">3
+							<option value="4">4
+							<option value="5">5
+							<option value="6">6
+							<option value="7">7
+							<option value="8">8
+							<option value="9">9
+							<option value="10">10
+							<option value="11">11
+							<option value="12">12
+							<option value="13">13
+							<option value="14">14
+							<option value="15">15
+							<option value="16">16
+							<option value="17">17
+							<option value="18">18
+							<option value="19">19
+							<option value="20">20
+							<option value="21">21
+							<option value="22">22
+							<option value="23">23
+							<option value="24">24
+							<option value="25">25
+							<option value="26">26
+							<option value="27">27
+							<option value="28">28
+							<option value="29">29
+							<option value="30">30
+							<option value="31">31
+						</select>
+						<select name="month">
+							<option value="1">January
+							<option value="2">February
+							<option value="3">March
+							<option value="4">April
+							<option value="5">May
+							<option value="6">June
+							<option value="7">July
+							<option value="8">August
+							<option value="9">September
+							<option value="10">October
+							<option value="11">November
+							<option value="12">December
+						</select>
+						<select name="year">
+							<option value="2002">2002
+							<option value="2003">2003
+							<option value="2004">2004
+							<option value="2005">2005
+						</select>
+				</fieldset>
+				<input type="submit" value="Save">
+			</form>
+		</div>
+		<footer>
+			<nav>
+				<a href="#">Link 1</a>
+				<a href="#">Link 2</a>
+				<a href="#">Link 3</a>
+			</nav>
+		</footer>
+	</body>
+</html>	
+		
+		

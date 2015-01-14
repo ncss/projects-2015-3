@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>	
+	<head>
+        {% include templates/stylesheets.html %}
+		<link rel="stylesheet" type="text/css" href="/static/css/video.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/components.css">
+		<script src="/static/js/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript">
+			var link = "{{ youtube_link }}";
+			console.log(link)
+			$.getJSON('http://gdata.youtube.com/feeds/api/videos/'+link+'?v=2&alt=jsonc', function(data, status, xhr) {
+				$("#title").append(data.data.title)
+			});
+		</script>
+		<script type="text/javascript">
+		  $(document).ready(function(){
+		  $("#fav").click(function(){
+			$.ajax("/favourites", 
+			  {type: "POST", data: 
+				{video_id: {{ video_id }}, profile_id: {{response.user.id}} }
+			  }
+			);
+            $("#fav").toggleClass("active").html("&#x2605; Favourited");
+		  });
+		  });
+		</script>
+        <style>
+        #fav {
+            text-decoration: none; background-color: #e90b3f; color: white; padding: 4px; border-radius: 4px;
+        }
+        #fav.active {
+            background-color: #999;
+            color: white;
+        }
+        </style>
+		<title>Video</title>
+	</head>
+	{% include templates/header.html %}
+	<body>
+	<section id="player_section">
+		<div class="video-width">
+			<div id="player">
+			</div>
+		</div>
+		<h1 id = "title"></h1>
+	</section>
+	<div id="main" class="video-width">
+        <section class="comment-form">
+            <div class="video-comment">
+                <!-- COUNTER EXPLANATION
+                    var counter = 0;
+                    var q = $(".video-comment");
+                    if(q.length != 0){
+                        counter = parseInt(q[q.length-1].value);
+                        //Apply html with prepend
+                        
+                    }
+                    else{
+                        //Apply html with prepend
+                    }
+                -->
+                <div id="video{COUNTER}" showAt="{TIMESTAMP}">
+                    <fieldset>
+                        <legend>
+                            Comment
+                        </legend>
+                        <b style="color: red;"><div id="commentError"></div></b>
+                        <p class="video-comment-text-input">
+                            <textarea rows="3" name="add_comment" class="video-comment-textarea"></textarea>
+                        </p>
+                        <input id="timestamp" type="hidden" value="" name="timestamp"/>
+                        <input id="video_id" type="hidden" value="{{ video_id }}" name="video_id"/>
+                        <input id="view_id" type ="hidden" value="" name="view_id"/>
+                        <input type="button" value="Submit" onclick="sendCommentData()"/>
+                    </fieldset>
+                </div>
+            </div>
+		</section>
+		{% if not favourited %}
+			<div style="background-color: #e0e0e0; padding: 10px 15px; text-align: center;">
+				<button id="fav" type='button'>Add to favourites</button>
+			</div>
+		{% end if %}
+		<section class="video-comments">
+			{% for comment in comments %}
+			<article class="timedComment video-comment cf" id="video{{ comment['counter'] }}" showAt="{{ comment['timestamp'] }}" style="display:none;">
+				<p class="video-comment-text">{{ comment['content'] }}</p>
+				<h3 class="video-comment-author">{{ comment['display_name'] }}</h3>
+				<time datetime="{{ comment['created'] }}" pubdate class="video-comment-time">
+					Posted {{ int(comment['timestamp']) }} second{% if int(comment['timestamp']) != 1 %}s{% end if %} into the video
+				</time>
+			</article>
+			{% end for %}	
+		</section>
+		<script type="text/javascript">
+            var videoId = "{{ youtube_link }}";
+		</script>
+	<script src="/static/js/video.js"></script>
+    <script src="/static/js/videoCommentHandler.js"></script>
+    <script src="/static/js/webSocket.js"></script>
+	</div>
+	{% include templates/footer.html %}
+	</body>
+</html>
+	
